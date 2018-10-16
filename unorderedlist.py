@@ -1,23 +1,23 @@
 from collections import UserList
 
 
-class unordered_list(UserList):
+class UnorderedList(UserList):
     def __init__(self, *args):
-        super(unordered_list, self).__init__(*args)
+        super(UnorderedList, self).__init__(*args)
 
     def sort(self, *_, **__):
-        raise NotImplementedError("sort not implemented for unordered_list")
+        raise NotImplementedError("sort not implemented for UnorderedList")
 
     def reverse(self):
-        raise NotImplementedError("reverese not implemented for unordered_list")
+        raise NotImplementedError("reverese not implemented for UnorderedList")
 
     def extend(self, *args):
-        if not isinstance(self, unordered_list):
-            raise TypeError("unordered_list expected")
-        return super(unordered_list, self).extend(*args)
+        if not isinstance(self, UnorderedList):
+            raise TypeError("UnorderedList expected")
+        return super(UnorderedList, self).extend(*args)
 
     def __eq__(self, other):
-        if not isinstance(other, unordered_list):
+        if not isinstance(other, UnorderedList):
             return NotImplemented
         if len(self) != len(other):
             return False
